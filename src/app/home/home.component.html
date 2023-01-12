@@ -12,8 +12,8 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                    <button (click)="openDialog(post,false)" mat-raised-button color="primary">Goruntule</button>
-                    <button (click)="openDialog(post,true)" mat-raised-button color="accent">Duzenle</button>
+                    <button [routerLink]="'/view-blog/'+post.id" mat-raised-button color="primary">Goruntule</button>
+                    <button [routerLink]="'/update-blog/'+post.id" mat-raised-button color="accent">Duzenle</button>
                 </mat-card-actions>
             </mat-card>
         </div>
