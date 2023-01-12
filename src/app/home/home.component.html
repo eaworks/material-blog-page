@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 col-sm-6 mt-5" *ngFor="let post of blogData| slice: (page-1) * pageSize : page * pageSize">
+            <mat-card class="example-card">
+                <mat-card-header>
+                    <mat-card-title>{{post.title}}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="assets/images/image{{post.imageId}}.jpg" alt="{{post.title}}">
+                <mat-card-content>
+                    <p>
+                        {{post.body}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button (click)="openDialog(post,false)" mat-raised-button color="primary">Goruntule</button>
+                    <button (click)="openDialog(post,true)" mat-raised-button color="accent">Duzenle</button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+</div>
+<div class="d-flex justify-content-center my-3"><ngb-pagination [(page)]="page" [pageSize]="pageSize"
+        [collectionSize]="blogData.length"></ngb-pagination></div>
